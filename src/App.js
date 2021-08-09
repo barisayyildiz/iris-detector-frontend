@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import RangeSlider from './components/RangeSlider'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+			
+			<h1 className="header">Iris Flower Detector</h1>
+
+			<div className="slider-container">
+				
+				<RangeSlider
+					min={100}
+					max={200}
+					text={"Sepal Width"}
+				></RangeSlider>
+
+				<RangeSlider
+					min={100}
+					max={200}
+					text={"Sepal Length"}
+				></RangeSlider>
+
+				<RangeSlider
+					min={100}
+					max={200}
+					text={"Petal Width"}
+				></RangeSlider>
+
+				<RangeSlider
+					min={100}
+					max={200}
+					text={"Petal Length"}
+				></RangeSlider>
+
+			</div>
+
+			<button id="detect">Detect</button>
+
     </div>
   );
 }
