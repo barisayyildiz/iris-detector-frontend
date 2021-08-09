@@ -20,20 +20,12 @@ function App() {
 
 		console.log(body)
 
-		axios.post('http://127.0.0.1:8000/api/hello/', {
+		axios.post('http://127.0.0.1:8000/api/flower/', {
 			...body
 		}).then(res => {
-
-			console.log(res)
-
 			const { name, url } = res.data.result;
 			setResponse(name);
 			setUrl(url);
-
-			// const { name, url } = res.data;
-			// setResponse(name);
-			// setUrl(url);
-			// console.log(name, url)
 		})
 
 	}
@@ -64,16 +56,14 @@ function App() {
 				></RangeSlider>
 			</div>
 			<button id="detect" onClick={makeRequest}>Detect</button>
-
 			{
 				response && (
 						<>
-							<h3>Your flower name is {response}</h3>
+							<h3 style={{fontWeight : '400'}}>Your flower is <span style={{fontWeight:'700'}}>Iris {response}</span></h3>
 							<img className="flower_image" stlye={{width:'10px'}} src={url}></img>
 						</>
 					)
 			}
-
     </div>
   );
 }
